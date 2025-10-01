@@ -1,0 +1,74 @@
+docker compose -f deployment/mlflow/docker-compose.yaml  up -d 
+
+docker compose -f mlflow-docker-compose.yaml  
+
+tree
+
+uv init
+
+uv venv --python python3.11
+
+python --version
+
+uv pip install -r requirements.txt
+
+uv pip install jupyterlab
+
+python -m jupyterlab
+
+python src\data\run_processing.py --input data\raw\house_data.csv --output data\processed\cleaned_house_data.csv
+
+docker image build -t fastapi .
+
+docker image ls
+
+docker image history fastapi
+
+docker run -idtP fastapi
+
+docker logs
+
+docker run --rm -it fastapi bash
+
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+docker ps
+
+docker run  -idtP  fastapi
+
+docker logs -f containerid
+
+docker rm -f containerid
+
+docker image build -t korukonda/streamlit:v1 .
+
+docker run -idtP korukonda/streamlit:v1
+
+docker ps
+
+docker image push korukonda/streamlit:v1
+
+docker login
+
+docker compose -f docker-compose.yaml
+
+docker compose build
+
+docker compose up -d
+
+docker compose ps
+
+docker compose logs
+
+docker compose logs -f
+
+docker compose logs -f
+
+docker  streamlit
+
+docker compose start
+
+docker compose stop
+
+docker compose shutdown
+
